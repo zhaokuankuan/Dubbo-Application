@@ -1,0 +1,20 @@
+server:
+  port: 8762
+  servlet:
+    context-path: /dubbo-rpc
+
+spring:
+  dubbo:
+    scan:
+      base-packages: com.kk.rpc
+    application:
+      id: dubbo-rpc
+      name: dubbo-rpc
+    protocol:
+      id: dubbo
+      name: dubbo
+    registry:
+      address: zookeeper://zkserver:2181
+    consumer:
+      timeout: 5000
+      check: true                          # 服务启动时检查被调用服务是否可用

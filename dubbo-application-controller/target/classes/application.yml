@@ -1,0 +1,21 @@
+server:
+   port: 8761
+   servlet:
+     context-path: /dubbo-controller
+
+spring:
+  dubbo:
+    scan:
+      base-packages: com.kk.controller
+    application:
+      id: dubbo-controller
+      name: dubbo-controller
+    protocol:
+      id: dubbo
+      name: dubbo
+    registry:
+      address: zookeeper://zkserver:2181
+    consumer:
+      timeout: 5000
+      check: true                          # 服务启动时检查被调用服务是否可用
+      retries: 1
